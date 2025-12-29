@@ -4,6 +4,8 @@ import { createServerClient } from '@/lib/supabase'
 export async function GET() {
   try {
     const supabase = createServerClient()
+    if (!supabase) return NextResponse.json([])
+    
     const { data, error } = await supabase
       .from('notifications')
       .select('*')
@@ -11,16 +13,18 @@ export async function GET() {
       .limit(50)
 
     if (error) throw error
-    return NextResponse.json(data)
+    return NextResponse.json(data || [])
   } catch (error) {
     console.error('Error fetching notifications:', error)
-    return NextResponse.json({ error: 'Failed to fetch notifications' }, { status: 500 })
+    return NextResponse.json([])
   }
 }
 
 export async function POST(request: NextRequest) {
   try {
     const supabase = createServerClient()
+    if (!supabase) return NextResponse.json({ error: 'Database not configured' }, { status: 503 })
+    
     const body = await request.json()
     
     const { data, error } = await supabase
@@ -40,6 +44,8 @@ export async function POST(request: NextRequest) {
 export async function PUT(request: NextRequest) {
   try {
     const supabase = createServerClient()
+    if (!supabase) return NextResponse.json({ error: 'Database not configured' }, { status: 503 })
+    
     const body = await request.json()
     
     // Mark all as read
