@@ -22,6 +22,7 @@ import {
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
+import { ContactForm } from "@/components/contact-form"
 
 export const metadata: Metadata = {
   title: "Dépannage Informatique Paris & Île-de-France | Intervention sous 24h",
@@ -187,54 +188,7 @@ export default function DepannagePage() {
             </div>
 
             {/* Quick Contact Form - Glassmorphism */}
-            <div className="glass-strong rounded-3xl p-8 glow-border">
-              <div className="text-center mb-6">
-                <h2 className="text-2xl font-bold text-white mb-2">Demande d&apos;intervention rapide</h2>
-                <p className="text-[#8899aa]">Réponse sous 30 minutes</p>
-              </div>
-
-              <form className="space-y-4">
-                <div>
-                  <label className="block text-sm font-medium text-[#b8c4d0] mb-2">Votre nom</label>
-                  <input 
-                    type="text" 
-                    className="w-full h-12 px-4 rounded-xl glass-input"
-                    placeholder="Jean Dupont"
-                    required
-                  />
-                </div>
-                <div>
-                  <label className="block text-sm font-medium text-[#b8c4d0] mb-2">Téléphone</label>
-                  <input 
-                    type="tel" 
-                    className="w-full h-12 px-4 rounded-xl glass-input"
-                    placeholder="06 12 34 56 78"
-                    required
-                  />
-                </div>
-                <div>
-                  <label className="block text-sm font-medium text-[#b8c4d0] mb-2">Décrivez votre problème</label>
-                  <select className="w-full h-12 px-4 rounded-xl glass-input">
-                    <option>Mon PC est trop lent</option>
-                    <option>J&apos;ai un virus</option>
-                    <option>Écran bleu / Mon PC plante</option>
-                    <option>Mon PC ne démarre plus</option>
-                    <option>Problème de connexion internet</option>
-                    <option>Autre problème</option>
-                  </select>
-                </div>
-                <Button type="submit" size="lg" className="w-full gap-2 bg-gradient-to-r from-orange-500 to-amber-400 hover:from-orange-400 hover:to-amber-300">
-                  <Zap className="h-5 w-5" />
-                  Demander une intervention
-                </Button>
-                <p className="text-xs text-center text-[#667788]">
-                  En soumettant ce formulaire, vous acceptez notre{" "}
-                  <Link href="/politique-confidentialite" className="text-[#4da6ff] hover:underline">
-                    politique de confidentialité
-                  </Link>
-                </p>
-              </form>
-            </div>
+            <ContactForm variant="depannage" />
           </div>
         </div>
       </section>

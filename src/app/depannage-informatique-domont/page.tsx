@@ -8,7 +8,6 @@ import {
   Star, 
   Shield, 
   Zap,
-  ArrowRight,
   MessageCircle,
   Award,
   Home,
@@ -17,8 +16,7 @@ import {
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
+import { GeoContactForm } from "@/components/geo-contact-form"
 
 export const metadata: Metadata = {
   title: "Dépannage Informatique Domont (95330) | Réparation PC à Domicile | Numelite",
@@ -118,21 +116,7 @@ export default function DepannageDomontPage() {
             </div>
 
             {/* Contact Form */}
-            <div className="bg-white rounded-3xl p-8 shadow-2xl text-slate-900">
-              <h2 className="text-2xl font-bold mb-2">Demande de rappel</h2>
-              <p className="text-slate-600 mb-6">Un technicien de Domont vous rappelle en 15 min</p>
-
-              <form className="space-y-4">
-                <Input placeholder="Votre nom" />
-                <Input type="tel" placeholder="Votre téléphone" />
-                <Input placeholder="Votre adresse à Domont ou alentours" />
-                <Textarea placeholder="Décrivez votre problème..." className="min-h-[100px]" />
-                <Button type="submit" className="w-full py-6 text-lg bg-[#1b6ca8] hover:bg-[#0f4c75]">
-                  Demander un rappel gratuit
-                  <ArrowRight className="h-5 w-5 ml-2" />
-                </Button>
-              </form>
-            </div>
+            <GeoContactForm location="Domont" buttonGradient="from-[#1b6ca8] to-[#0f4c75]" />
           </div>
         </div>
       </section>

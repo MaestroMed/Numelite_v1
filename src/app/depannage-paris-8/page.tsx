@@ -5,14 +5,12 @@ import {
   MapPin, 
   Star, 
   Zap,
-  ArrowRight,
   MessageCircle
 } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
+import { GeoContactForm } from "@/components/geo-contact-form"
 
 export const metadata: Metadata = {
   title: "Dépannage Informatique Paris 8ème | Réparation PC Entreprise | Numelite",
@@ -80,19 +78,7 @@ export default function DepannageParis8Page() {
               </div>
             </div>
 
-            <div className="bg-white rounded-3xl p-8 shadow-2xl text-slate-900">
-              <h2 className="text-2xl font-bold mb-6">Intervention prioritaire</h2>
-              <form className="space-y-4">
-                <Input placeholder="Votre nom / Société" />
-                <Input type="tel" placeholder="Votre téléphone" />
-                <Input placeholder="Adresse dans le 8ème" />
-                <Textarea placeholder="Nature de l'urgence..." className="min-h-[100px]" />
-                <Button type="submit" className="w-full py-6 text-lg bg-gradient-to-r from-amber-500 to-yellow-400 text-slate-900">
-                  Intervention prioritaire
-                  <ArrowRight className="h-5 w-5 ml-2" />
-                </Button>
-              </form>
-            </div>
+            <GeoContactForm location="8ème" buttonGradient="from-amber-500 to-yellow-400" />
           </div>
         </div>
       </section>
